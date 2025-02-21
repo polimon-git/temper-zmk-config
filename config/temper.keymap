@@ -45,26 +45,51 @@
 
         default_layer {
             bindings = <
-&kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp A  &tap_preferred_home_row LEFT_ALT S  &tap_preferred_home_row LCTRL D  &tap_preferred_home_row LEFT_SHIFT F  &kp G  &kp H  &tap_preferred_home_row RIGHT_SHIFT J  &tap_preferred_home_row RCTRL K  &tap_preferred_home_row RIGHT_ALT L  &kp RA(NON_US_HASH)  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp PERIOD  &kp SLASH  &kp LGUI  &mo 1  &kp SPACE  &kp BACKSPACE  &mo 2  &kp ESCAPE
+&kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp A  &tap_preferred_home_row LEFT_ALT S  &tap_preferred_home_row LCTRL D  &tap_preferred_home_row LEFT_SHIFT F  &kp G  &kp H  &tap_preferred_home_row RIGHT_SHIFT J  &tap_preferred_home_row RCTRL K  &tap_preferred_home_row RIGHT_ALT L  &sl 4  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp PERIOD  &kp SLASH  &kp LGUI  &mo 1  &kp SPACE  &kp BACKSPACE  &mo 2  &kp ESCAPE
             >;
+
+            label = "DEF";
         };
 
         sym {
             bindings = <
-&kp LS(GRAVE)  &none  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(N5)  &kp LS(NUMBER_6)  &none  &kp LS(APOS)  &kp RA(MINUS)  &kp RA(EQUAL)  &kp BACKSLASH  &kp LS(N7)  &kp LS(N8)  &kp RA(LEFT_BRACKET)  &kp LS(RA(LEFT_BRACKET))  &kp RA(APOS)  &kp LS(NUMBER_1)  &kp MINUS  &kp RIGHT_BRACKET  &kp LS(EQUAL)  &kp LS(BACKSLASH)  &kp GRAVE  &kp LS(N9)  &kp RA(RIGHT_BRACKET)  &kp LS(RA(RIGHT_BRACKET))  &kp RA(SEMICOLON)  &kp LS(MINUS)  &kp LS(NUMBER_2)  &kp LS(RIGHT_BRACKET)  &kp LS(N0)  &none  &none  &none  &kp ENTER  &mo 3  &none
+&kp LS(GRAVE)  &none  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(N5)  &kp LS(NUMBER_6)  &none  &kp LS(APOS)  &kp RA(MINUS)  &kp RA(EQUAL)  &kp BACKSLASH  &kp LS(N7)  &kp LS(N8)  &kp RA(LEFT_BRACKET)  &kp LS(RA(LEFT_BRACKET))  &kp RA(APOS)  &kp LS(NUMBER_1)  &kp MINUS  &kp RIGHT_BRACKET  &kp LS(EQUAL)  &kp LS(BACKSLASH)  &kp GRAVE  &kp LS(N9)  &kp RA(RIGHT_BRACKET)  &kp LS(RA(RIGHT_BRACKET))  &kp RA(SEMICOLON)  &kp LS(MINUS)  &kp LS(NUMBER_2)  &kp LS(RIGHT_BRACKET)  &kp LS(N0)  &none  &none  &none  &kp ENTER  &none  &none
             >;
+
+            label = "SYM";
         };
 
         num_nav {
             bindings = <
-&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5  &kp NUMBER_6  &kp N7  &kp N8  &kp N9  &kp N0  &sk LEFT_GUI  &sk LEFT_ALT  &sk LCTRL  &sk LEFT_SHIFT  &sk RIGHT_SHIFT  &kp PRINTSCREEN  &kp HOME  &kp UP_ARROW  &kp END  &kp PAGE_UP  &none  &none  &none  &none  &none  &kp DELETE  &kp LEFT  &kp DOWN  &kp RIGHT  &kp PAGE_DOWN  &none  &mo 3  &none  &none  &none  &none
+&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5  &kp NUMBER_6  &kp N7  &kp N8  &kp N9  &kp N0  &sk LEFT_GUI  &sk LEFT_ALT  &sk LCTRL  &sk LEFT_SHIFT  &sk RIGHT_SHIFT  &kp PRINTSCREEN  &kp HOME  &kp UP_ARROW  &kp END  &kp PAGE_UP  &none  &none  &none  &none  &none  &kp DELETE  &kp LEFT  &kp DOWN  &kp RIGHT  &kp PAGE_DOWN  &none  &none  &none  &none  &none  &none
             >;
+
+            label = "NXX";
         };
 
         func {
             bindings = <
 &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &none  &none  &none  &none  &none  &kp F11  &kp F12  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
             >;
+
+            label = "FN";
+        };
+
+        accent {
+            bindings = <
+&trans  &trans  &kp LEFT_BRACKET  &trans  &trans  &trans  &kp NON_US_HASH  &kp EQUAL  &kp SEMI  &trans  &kp APOS  &trans  &kp LS(LEFT_BRACKET)  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+
+            label = "ACC";
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        func {
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
     };
 };
