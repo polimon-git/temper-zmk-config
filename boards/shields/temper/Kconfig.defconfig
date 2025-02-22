@@ -29,4 +29,7 @@ if SHIELD_TEMPER_LEFT || SHIELD_TEMPER_RIGHT
 config ZMK_SPLIT
     default y
 
+config ZMK_SLEEP 
+    default y
+
 endif
