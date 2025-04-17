@@ -32,7 +32,7 @@ config ZMK_SPLIT
 config ZMK_SLEEP 
     default y
 
-config CONFIG_ZMK_IDLE_TIMEOUT
+config ZMK_IDLE_TIMEOUT
     default 900000
 
 endif
